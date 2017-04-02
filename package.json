@@ -1,17 +1,40 @@
 {
-    "buildNpmdoc":"soap",
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "buildNpmdoc": "soap",
+    "description": "api documentation for [soap (v0.19.0)](https://github.com/milewise/node-soap#readme) [![npm package](https://img.shields.io/npm/v/npmdoc-soap.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-soap) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-soap.svg)](https://travis-ci.org/npmdoc/node-npmdoc-soap)",
     "devDependencies": {
-        "soap": "*",
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "soap": "*",
         "utility2": "kaizhu256/node-utility2#alpha"
     },
-    "name":"npmdoc-soap",
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-soap",
+    "keywords": [
+        "documentation",
+        "soap"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_soap.js",
+    "name": "npmdoc-soap",
+    "nameAlias": "npmdoc_soap",
+    "nameOriginal": "npmdoc-soap",
+    "os": [
+        "darwin",
+        "linux"
+    ],
     "repository": {
         "type": "git",
         "url": "https://github.com/npmdoc/node-npmdoc-soap.git"
     },
     "scripts": {
-        "build-ci": "utility2 shReadmeTest build_ci.sh"
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "(set -e; npm install \"kaizhu256/node-utility2#alpha\"; utility2 shDeployHeroku)",
+        "postinstall": "if [ -f npm_scripts.sh ]; then ./npm_scripts.sh postinstall; fi",
+        "start": "(set -e; export PORT=${PORT:-8080}; utility2 start test.js)",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
     },
     "version": "0.0.1"
 }
