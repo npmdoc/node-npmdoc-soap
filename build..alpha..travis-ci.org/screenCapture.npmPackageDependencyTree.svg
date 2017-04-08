@@ -39,7 +39,7 @@
 <tspan x="10" y="586">  │ ├─┬ form-data@2.1.2 </tspan>
 <tspan x="10" y="602">  │ │ └── asynckit@0.4.0 </tspan>
 <tspan x="10" y="618">  │ ├─┬ har-validator@4.2.1 </tspan>
-<tspan x="10" y="634">  │ │ ├─┬ ajv@4.11.5 </tspan>
+<tspan x="10" y="634">  │ │ ├─┬ ajv@4.11.6 </tspan>
 <tspan x="10" y="650">  │ │ │ ├── co@4.6.0 </tspan>
 <tspan x="10" y="666">  │ │ │ └─┬ json-stable-stringify@1.0.1 </tspan>
 <tspan x="10" y="682">  │ │ │   └── jsonify@0.0.0 </tspan>
