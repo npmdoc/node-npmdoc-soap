@@ -189,6 +189,12 @@
 
         <li>
 
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan"></span>soap</span>
+
+        </li>
+
+        <li>
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">soap.</span>BasicAuthSecurity.prototype</span>
 
         </li>
@@ -1306,6 +1312,133 @@
 
     </ol></li>
 
+    <li class="apidocModuleLi"><a href="#apidoc.module.soap.soap">module soap.soap</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.soap.soap.BasicAuthSecurity">
+            function <span class="apidocSignatureSpan">soap.soap.</span>BasicAuthSecurity
+            <span class="apidocSignatureSpan">(username, password, defaults)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.soap.soap.BearerSecurity">
+            function <span class="apidocSignatureSpan">soap.soap.</span>BearerSecurity
+            <span class="apidocSignatureSpan">(token, defaults)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.soap.soap.Client">
+            function <span class="apidocSignatureSpan">soap.soap.</span>Client
+            <span class="apidocSignatureSpan">(wsdl, endpoint, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.soap.soap.ClientSSLSecurity">
+            function <span class="apidocSignatureSpan">soap.soap.</span>ClientSSLSecurity
+            <span class="apidocSignatureSpan">(key, cert, ca, defaults)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.soap.soap.ClientSSLSecurityPFX">
+            function <span class="apidocSignatureSpan">soap.soap.</span>ClientSSLSecurityPFX
+            <span class="apidocSignatureSpan">(pfx, passphrase, defaults)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.soap.soap.HttpClient">
+            function <span class="apidocSignatureSpan">soap.soap.</span>HttpClient
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.soap.soap.Server">
+            function <span class="apidocSignatureSpan">soap.soap.</span>Server
+            <span class="apidocSignatureSpan">(server, path, services, wsdl, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.soap.soap.WSDL">
+            function <span class="apidocSignatureSpan">soap.soap.</span>WSDL
+            <span class="apidocSignatureSpan">(definition, uri, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.soap.soap.WSSecurity">
+            function <span class="apidocSignatureSpan">soap.soap.</span>WSSecurity
+            <span class="apidocSignatureSpan">(username, password, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.soap.soap.WSSecurityCert">
+            function <span class="apidocSignatureSpan">soap.soap.</span>WSSecurityCert
+            <span class="apidocSignatureSpan">(privatePEM, publicP12PEM, password, encoding)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.soap.soap.createClient">
+            function <span class="apidocSignatureSpan">soap.soap.</span>createClient
+            <span class="apidocSignatureSpan">(url, options, callback, endpoint)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.soap.soap.listen">
+            function <span class="apidocSignatureSpan">soap.soap.</span>listen
+            <span class="apidocSignatureSpan">(server, pathOrOptions, services, xml)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.soap.soap.passwordDigest">
+            function <span class="apidocSignatureSpan">soap.soap.</span>passwordDigest
+            <span class="apidocSignatureSpan">(nonce, created, password)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">soap.soap.</span>security</span>
+
+        </li>
+
+    </ol></li>
+
     <li class="apidocModuleLi"><a href="#apidoc.module.soap.soap_stub">module soap.soap_stub</a><ol>
 
         <li>
@@ -2024,6 +2157,8 @@ The `server.authorizeConnection` method is called prior to the soap service meth
 If the method is defined and returns `false` then the incoming connection is
 ...</pre></li>
     </ul>
+
+
 
 
 
@@ -6504,6 +6639,588 @@ Sometimes it is necessary to override the default behaviour of `node-soap` in or
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.soap.soap" id="apidoc.module.soap.soap">module soap.soap</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.soap.soap.BasicAuthSecurity" id="apidoc.element.soap.soap.BasicAuthSecurity">
+        function <span class="apidocSignatureSpan">soap.soap.</span>BasicAuthSecurity
+        <span class="apidocSignatureSpan">(username, password, defaults)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function BasicAuthSecurity(username, password, defaults) {
+  this._username = username;
+  this._password = password;
+  this.defaults = {};
+  _.merge(this.defaults, defaults);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+as well.  The interface is quite simple. Each protocol defines 2 methods:
+* `addOptions` - a method that accepts an options arg that is eventually passed directly to `request`
+* `toXML` - a method that returns a string of XML.
+
+### BasicAuthSecurity
+
+``` javascript
+  client.setSecurity(new soap.<span class="apidocCodeKeywordSpan">BasicAuthSecurity</span>(&#x27;username&#x27;, &#x27;password&#
+x27;));
+```
+
+### BearerSecurity
+
+``` javascript
+  client.setSecurity(new soap.BearerSecurity(&#x27;token&#x27;));
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.soap.soap.BearerSecurity" id="apidoc.element.soap.soap.BearerSecurity">
+        function <span class="apidocSignatureSpan">soap.soap.</span>BearerSecurity
+        <span class="apidocSignatureSpan">(token, defaults)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function BearerSecurity(token, defaults) {
+	this._token = token;
+	this.defaults = {};
+	_.merge(this.defaults, defaults);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+``` javascript
+  client.setSecurity(new soap.BasicAuthSecurity(&#x27;username&#x27;, &#x27;password&#x27;));
+```
+
+### BearerSecurity
+
+``` javascript
+  client.setSecurity(new soap.<span class="apidocCodeKeywordSpan">BearerSecurity</span>(&#x27;token&#x27;));
+```
+
+### ClientSSLSecurity
+
+_Note_: If you run into issues using this protocol, consider passing these options
+as default request options to the constructor:
+* `rejectUnauthorized: false`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.soap.soap.Client" id="apidoc.element.soap.soap.Client">
+        function <span class="apidocSignatureSpan">soap.soap.</span>Client
+        <span class="apidocSignatureSpan">(wsdl, endpoint, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Client = function (wsdl, endpoint, options) {
+  events.EventEmitter.call(this);
+  options = options || {};
+  this.wsdl = wsdl;
+  this._initializeOptions(options);
+  this._initializeServices(endpoint);
+  this.httpClient = options.httpClient || new HttpClient(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.soap.soap.ClientSSLSecurity" id="apidoc.element.soap.soap.ClientSSLSecurity">
+        function <span class="apidocSignatureSpan">soap.soap.</span>ClientSSLSecurity
+        <span class="apidocSignatureSpan">(key, cert, ca, defaults)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ClientSSLSecurity(key, cert, ca, defaults) {
+  if (key) {
+    if(Buffer.isBuffer(key)) {
+      this.key = key;
+    } else if (typeof key === &#x27;string&#x27;) {
+      this.key = fs.readFileSync(key);
+    } else {
+      throw new Error(&#x27;key should be a buffer or a string!&#x27;);
+    }
+  }
+
+  if (cert) {
+    if(Buffer.isBuffer(cert)) {
+      this.cert = cert;
+    } else if (typeof cert === &#x27;string&#x27;) {
+      this.cert = fs.readFileSync(cert);
+    } else {
+      throw new Error(&#x27;cert should be a buffer or a string!&#x27;);
+    }
+  }
+
+  if (ca) {
+    if(Buffer.isBuffer(ca) || Array.isArray(ca)) {
+      this.ca = ca;
+    } else if (typeof ca === &#x27;string&#x27;) {
+      this.ca = fs.readFileSync(ca);
+    } else {
+      defaults = ca;
+      this.ca = null;
+    }
+  }
+
+  this.defaults = {};
+  _.merge(this.defaults, defaults);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+_Note_: If you run into issues using this protocol, consider passing these options
+as default request options to the constructor:
+* `rejectUnauthorized: false`
+* `strictSSL: false`
+* `secureOptions: constants.SSL_OP_NO_TLSv1_2` (this is likely needed for node &#x3e;= 10.0)
+
+``` javascript
+  client.setSecurity(new soap.<span class="apidocCodeKeywordSpan">ClientSSLSecurity</span>(
+    &#x27;/path/to/key&#x27;
+    , &#x27;/path/to/cert&#x27;
+    , {/*default request options*/}
+  ));
+```
+
+### WSSecurity
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.soap.soap.ClientSSLSecurityPFX" id="apidoc.element.soap.soap.ClientSSLSecurityPFX">
+        function <span class="apidocSignatureSpan">soap.soap.</span>ClientSSLSecurityPFX
+        <span class="apidocSignatureSpan">(pfx, passphrase, defaults)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ClientSSLSecurityPFX(pfx, passphrase, defaults) {
+  if (typeof passphrase === &#x27;object&#x27;) {
+    defaults = passphrase;
+  }
+  if (pfx) {
+    if (Buffer.isBuffer(pfx)) {
+      this.pfx = pfx;
+    } else if (typeof pfx === &#x27;string&#x27;) {
+      this.pfx = fs.readFileSync(pfx);
+    } else {
+      throw new Error(&#x27;supplied pfx file should be a buffer or a file location&#x27;);
+    }
+  }
+
+  if (passphrase) {
+    if (typeof passphrase === &#x27;string&#x27;) {
+      this.passphrase = passphrase;
+    }
+  }
+  this.defaults = {};
+  _.merge(this.defaults, defaults);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.soap.soap.HttpClient" id="apidoc.element.soap.soap.HttpClient">
+        function <span class="apidocSignatureSpan">soap.soap.</span>HttpClient
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function HttpClient(options) {
+  options = options || {};
+  this._request = options.request || req;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.soap.soap.Server" id="apidoc.element.soap.soap.Server">
+        function <span class="apidocSignatureSpan">soap.soap.</span>Server
+        <span class="apidocSignatureSpan">(server, path, services, wsdl, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Server = function (server, path, services, wsdl, options) {
+  var self = this;
+
+  events.EventEmitter.call(this);
+
+  options = options || {};
+  this.path = path;
+  this.services = services;
+  this.wsdl = wsdl;
+  this.suppressStack = options &#x26;&#x26; options.suppressStack;
+
+  if (path[path.length - 1] !== &#x27;/&#x27;)
+    path += &#x27;/&#x27;;
+  wsdl.onReady(function (err) {
+    if (typeof server.route === &#x27;function&#x27; &#x26;&#x26; typeof server.use === &#x27;function&#x27;) {
+      //handle only the required URL path for express server
+      server.route(path).all(function (req, res, next) {
+        if (typeof self.authorizeConnection === &#x27;function&#x27;) {
+          if (!self.authorizeConnection(req)) {
+            res.end();
+            return;
+          }
+        }
+        self._requestListener(req, res);
+      });
+    } else {
+      var listeners = server.listeners(&#x27;request&#x27;).slice();
+      server.removeAllListeners(&#x27;request&#x27;);
+      server.addListener(&#x27;request&#x27;, function (req, res) {
+        if (typeof self.authorizeConnection === &#x27;function&#x27;) {
+          if (!self.authorizeConnection(req)) {
+            res.end();
+            return;
+          }
+        }
+        var reqPath = url.parse(req.url).pathname;
+        if (reqPath[reqPath.length - 1] !== &#x27;/&#x27;) {
+          reqPath += &#x27;/&#x27;;
+        }
+        if (path === reqPath) {
+          self._requestListener(req, res);
+        } else {
+          for (var i = 0, len = listeners.length; i &#x3c; len; i++) {
+            listeners[i].call(this, req, res);
+          }
+        }
+      });
+    }
+  });
+
+  this._initializeOptions(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.soap.soap.WSDL" id="apidoc.element.soap.soap.WSDL">
+        function <span class="apidocSignatureSpan">soap.soap.</span>WSDL
+        <span class="apidocSignatureSpan">(definition, uri, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">WSDL = function (definition, uri, options) {
+  var self = this,
+      fromFunc;
+
+  this.uri = uri;
+  this.callback = function() {
+  };
+  this._includesWsdl = [];
+
+  // initialize WSDL cache
+  this.WSDL_CACHE = (options || {}).WSDL_CACHE || {};
+
+  this._initializeOptions(options);
+
+  if (typeof definition === &#x27;string&#x27;) {
+    definition = stripBom(definition);
+    fromFunc = this._fromXML;
+  }
+  else if (typeof definition === &#x27;object&#x27;) {
+    fromFunc = this._fromServices;
+  }
+  else {
+    throw new Error(&#x27;WSDL constructor takes either an XML string or service definition&#x27;);
+  }
+
+  process.nextTick(function() {
+    try {
+      fromFunc.call(self, definition);
+    } catch (e) {
+      return self.callback(e.message);
+    }
+
+    self.processIncludes(function(err) {
+      var name;
+      if (err) {
+        return self.callback(err);
+      }
+
+      self.definitions.deleteFixedAttrs();
+      var services = self.services = self.definitions.services;
+      if (services) {
+        for (name in services) {
+          services[name].postProcess(self.definitions);
+        }
+      }
+      var complexTypes = self.definitions.complexTypes;
+      if (complexTypes) {
+        for (name in complexTypes) {
+          complexTypes[name].deleteFixedAttrs();
+        }
+      }
+
+      // for document style, for every binding, prepare input message element name to (methodName, output message element name)
+mapping
+      var bindings = self.definitions.bindings;
+      for (var bindingName in bindings) {
+        var binding = bindings[bindingName];
+        if (typeof binding.style === &#x27;undefined&#x27;) {
+          binding.style = &#x27;document&#x27;;
+        }
+        if (binding.style !== &#x27;document&#x27;)
+          continue;
+        var methods = binding.methods;
+        var topEls = binding.topElements = {};
+        for (var methodName in methods) {
+          if (methods[methodName].input) {
+            var inputName = methods[methodName].input.$name;
+            var outputName=&#x22;&#x22;;
+            if(methods[methodName].output )
+              outputName = methods[methodName].output.$name;
+            topEls[inputName] = {&#x22;methodName&#x22;: methodName, &#x22;outputName&#x22;: outputName};
+          }
+        }
+      }
+
+      // prepare soap envelope xmlns definition string
+      self.xmlnsInEnvelope = self._xmlnsMap();
+
+      self.callback(err, self);
+    });
+
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.soap.soap.WSSecurity" id="apidoc.element.soap.soap.WSSecurity">
+        function <span class="apidocSignatureSpan">soap.soap.</span>WSSecurity
+        <span class="apidocSignatureSpan">(username, password, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function WSSecurity(username, password, options) {
+  options = options || {};
+  this._username = username;
+  this._password = password;
+  //must account for backward compatibility for passwordType String param as well as object options defaults: passwordType = &#x27;PasswordText
+&#x27;, hasTimeStamp = true
+  if (typeof options === &#x27;string&#x27;) {
+    this._passwordType = options ? options : &#x27;PasswordText&#x27;;
+    options = {};
+  } else {
+    this._passwordType = options.passwordType ? options.passwordType : &#x27;PasswordText&#x27;;
+  }
+
+  if (validPasswordTypes.indexOf(this._passwordType) === -1) {
+    this._passwordType = &#x27;PasswordText&#x27;;
+  }
+
+  this._hasTimeStamp = options.hasTimeStamp || typeof options.hasTimeStamp === &#x27;boolean&#x27; ? !!options.hasTimeStamp : true;
+  /*jshint eqnull:true */
+  if (options.hasNonce != null) {
+    this._hasNonce = !!options.hasNonce;
+  }
+  this._hasTokenCreated = options.hasTokenCreated || typeof options.hasTokenCreated === &#x27;boolean&#x27; ? !!options.hasTokenCreated :
+true;
+  if (options.actor != null) {
+    this._actor = options.actor;
+  }
+  if (options.mustUnderstand != null) {
+    this._mustUnderstand = !!options.mustUnderstand;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.soap.soap.WSSecurityCert" id="apidoc.element.soap.soap.WSSecurityCert">
+        function <span class="apidocSignatureSpan">soap.soap.</span>WSSecurityCert
+        <span class="apidocSignatureSpan">(privatePEM, publicP12PEM, password, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function WSSecurityCert(privatePEM, publicP12PEM, password, encoding) {
+  if (!ursa) {
+    throw new Error(&#x27;Module ursa must be installed to use WSSecurityCert&#x27;);
+  }
+  this.privateKey = ursa.createPrivateKey(privatePEM, password, encoding);
+  this.publicP12PEM = publicP12PEM.toString().replace(&#x27;-----BEGIN CERTIFICATE-----&#x27;, &#x27;&#x27;).replace(&#x27;-----END CERTIFICATE-----&#x27;, &#x27;&#x27;).
+replace(/(\r\n|\n|\r)/gm, &#x27;&#x27;);
+
+  this.signer = new SignedXml();
+  this.signer.signingKey = this.privateKey.toPrivatePem();
+  this.x509Id = &#x22;x509-&#x22; + generateId();
+
+  var _this = this;
+  this.signer.keyInfoProvider = {};
+  this.signer.keyInfoProvider.getKeyInfo = function (key) {
+    return wsseSecurityTokenTemplate({ x509Id: _this.x509Id });
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+WS-Security X509 Certificate support.
+
+``` javascript
+  var privateKey = fs.readFileSync(privateKeyPath);
+  var publicKey = fs.readFileSync(publicKeyPath);
+  var password = &#x27;&#x27;; // optional password
+  var wsSecurity = new soap.<span class="apidocCodeKeywordSpan">WSSecurityCert</span>(privateKey, publicKey, password, &#x27;utf8
+&#x27;);
+  client.setSecurity(wsSecurity);
+```
+
+_Note_: Optional dependency &#x27;ursa&#x27; is required to be installed successfully when WSSecurityCert is used.
+
+## Handling XML Attributes, Value and XML (wsdlOptions).
+Sometimes it is necessary to override the default behaviour of `node-soap` in order to deal with the special requirements
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.soap.soap.createClient" id="apidoc.element.soap.soap.createClient">
+        function <span class="apidocSignatureSpan">soap.soap.</span>createClient
+        <span class="apidocSignatureSpan">(url, options, callback, endpoint)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createClient(url, options, callback, endpoint) {
+  if (typeof options === &#x27;function&#x27;) {
+    endpoint = callback;
+    callback = options;
+    options = {};
+  }
+  endpoint = options.endpoint || endpoint;
+  _requestWSDL(url, options, function(err, wsdl) {
+    callback(err, wsdl &#x26;&#x26; new Client(wsdl, endpoint, options));
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+&#x3c;!-- DON&#x27;T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE --&#x3e;
+
+
+- [Features:](#features)
+- [Install](#install)
+- [Where can I file an issue?](#where-can-i-file-an-issue)
+- [Module](#module)
+- [soap.<span class="apidocCodeKeywordSpan">createClient</span>(url[, options], callback) - create a new SOAP client from a WSDL
+ url. Also supports a local filesystem path.](#soapcreateclienturl-options-callback---create-a-new-soap-client-from-a-wsdl-url-also
+-supports-a-local-filesystem-path)
+- [soap.listen(*server*, *path*, *services*, *wsdl*) - create a new SOAP server that listens on *path* and provides *services*.](#
+soaplistenserver-path-services-wsdl---create-a-new-soap-server-that-listens-on-path-and-provides-services)
+- [Options](#options)
+- [Server Logging](#server-logging)
+- [Server Events](#server-events)
+- [SOAP Fault](#soap-fault)
+- [Server security example using PasswordDigest](#server-security-example-using-passworddigest)
+- [Server connection authorization](#server-connection-authorization)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.soap.soap.listen" id="apidoc.element.soap.soap.listen">
+        function <span class="apidocSignatureSpan">soap.soap.</span>listen
+        <span class="apidocSignatureSpan">(server, pathOrOptions, services, xml)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function listen(server, pathOrOptions, services, xml) {
+  var options = {},
+    path = pathOrOptions,
+    uri = null;
+
+  if (typeof pathOrOptions === &#x27;object&#x27;) {
+    options = pathOrOptions;
+    path = options.path;
+    services = options.services;
+    xml = options.xml;
+    uri = options.uri;
+  }
+
+  var wsdl = new WSDL(xml || services, uri, options);
+  return new Server(server, path, services, wsdl, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+- [Features:](#features)
+- [Install](#install)
+- [Where can I file an issue?](#where-can-i-file-an-issue)
+- [Module](#module)
+  - [soap.createClient(url[, options], callback) - create a new SOAP client from a WSDL url. Also supports a local filesystem path
+.](#soapcreateclienturl-options-callback---create-a-new-soap-client-from-a-wsdl-url-also-supports-a-local-filesystem-path)
+  - [soap.<span class="apidocCodeKeywordSpan">listen</span>(*server*, *path*, *services*, *wsdl*) - create a new SOAP server that
+ listens on *path* and provides *services*.](#soaplistenserver-path-services-wsdl---create-a-new-soap-server-that-listens-on-path
+-and-provides-services)
+  - [Options](#options)
+  - [Server Logging](#server-logging)
+  - [Server Events](#server-events)
+  - [SOAP Fault](#soap-fault)
+  - [Server security example using PasswordDigest](#server-security-example-using-passworddigest)
+  - [Server connection authorization](#server-connection-authorization)
+- [SOAP Headers](#soap-headers)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.soap.soap.passwordDigest" id="apidoc.element.soap.soap.passwordDigest">
+        function <span class="apidocSignatureSpan">soap.soap.</span>passwordDigest
+        <span class="apidocSignatureSpan">(nonce, created, password)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function passwordDigest(nonce, created, password) {
+  // digest = base64 ( sha1 ( nonce + created + password ) )
+  var pwHash = crypto.createHash(&#x27;sha1&#x27;);
+  var rawNonce = new Buffer(nonce || &#x27;&#x27;, &#x27;base64&#x27;).toString(&#x27;binary&#x27;);
+  pwHash.update(rawNonce + created + password);
+  return pwHash.digest(&#x27;base64&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+``` javascript
+  server = soap.listen(...)
+  server.authenticate = function(security) {
+    var created, nonce, password, user, token;
+    token = security.UsernameToken, user = token.Username,
+            password = token.Password, nonce = token.Nonce, created = token.Created;
+    return user === &#x27;user&#x27; &#x26;&#x26; password === soap.<span class="apidocCodeKeywordSpan">passwordDigest</span>(nonce
+, created, &#x27;password&#x27;);
+  };
+```
+
+### Server connection authorization
+
+The `server.authorizeConnection` method is called prior to the soap service method.
+If the method is defined and returns `false` then the incoming connection is
+...</pre></li>
+    </ul>
+
+
 
 
 </div>
